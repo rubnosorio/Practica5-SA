@@ -38,7 +38,7 @@ python setup.py sdist
 
 # Configuracion de netlify para el despligue de los artefactos
 ```sh 
-Repository: github.com/fernando29hernandez/-SA-Tarea2_201403624
+Repository: github.com/rubnosorio/Practica5-SA
 Base directory: /ESB
 Build command: gulp defaultempaquetar
 Publish directory: /ESB/dist
