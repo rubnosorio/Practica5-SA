@@ -2,7 +2,7 @@
   "name": "esb",
   "version": "1.0.0",
   "description": "Orquestador de Servicios Restaurante",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-chug": "^0.5.1",
+    "gulp-concat": "^2.6.1",
     "nodemon": "^2.0.2",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "gulp-shell": "^0.8.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.1"
   }
 }
