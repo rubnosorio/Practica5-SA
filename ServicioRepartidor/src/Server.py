@@ -2,7 +2,8 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api, reqparse
 import json
-
+'''Se agrega modulo de pruebas unitarias'''
+import doctest
 ''' declaracion del rest api'''
 app = Flask(__name__)
 api = Api(app)
@@ -12,7 +13,16 @@ repartidores_no = 1
 
 ''' Repatidores con su metodo get y post '''
 class Repartidores(Resource):
+
     def get(self):
+        """
+        >>> response = r.get()
+        >>> x = str(response)
+        >>> print(x)
+        {'Repartidores': 1}
+        >>> assert "{'Repartidores': 1}" in x
+        :return: {'Repartidores': 1}
+        """
         global repartidores_no
         return {'Repartidores': repartidores_no}
 
@@ -31,3 +41,4 @@ api.add_resource(Repartidores, '/')
 '''run server en el puerto 5000'''
 if __name__ == '__main__':
     app.run(port='5000')
+    doctest.testmod(extraglobs={'r': Repartidores()})
