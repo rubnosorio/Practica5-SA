@@ -4,6 +4,7 @@ from flask_restful import Resource, Api, reqparse
 import json
 '''Se agrega modulo de pruebas unitarias'''
 import doctest
+import unittest
 ''' declaracion del rest api'''
 app = Flask(__name__)
 api = Api(app)
@@ -15,15 +16,9 @@ repartidores_no = 1
 class Repartidores(Resource):
 
     def get(self):
-        """
-        >>> response = r.get()
-        >>> x = str(response)
-        >>> print(x)
-        {'Repartidores': 1}
-        >>> assert "{'Repartidores': 1}" in x
-        :return: {'Repartidores': 1}
-        """
+                    
         global repartidores_no
+        self.test_get(repartidores_no)        
         return {'Repartidores': repartidores_no}
 
     def post(self):
@@ -33,12 +28,17 @@ class Repartidores(Resource):
         estado = 'Orden Recibida,Procediendo a entregar por el repartidor '+str(repartidores_no)
         '''respuesta de parte del repartidor'''
         repartidores_no=repartidores_no+1
-        return {'status':estado }  
+        return {'status':estado }
+    
+    def test_get(peticion):
+    	response = self.get()
+    	self.assertEqual(response, "{'Repartidores': 1}")	
 
+   	
 '''agrego la clase como posible ruta '''
 api.add_resource(Repartidores, '/')
 
 '''run server en el puerto 5000'''
 if __name__ == '__main__':
     app.run(port='5000')
-    doctest.testmod(extraglobs={'r': Repartidores()})
+    unittest.main()
