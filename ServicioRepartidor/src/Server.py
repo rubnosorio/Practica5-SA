@@ -30,7 +30,7 @@ class Repartidores(Resource):
         repartidores_no=repartidores_no+1
         return {'status':estado }
     
-    def test_get(peticion):
+    def test_get(self):
     	response = self.get()
     	self.assertEqual(response, "{'Repartidores': 1}")	
 
