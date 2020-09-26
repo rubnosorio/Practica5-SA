@@ -12,7 +12,7 @@ gulp.task('EmpaquetarESB', function () {
 });
 
 gulp.task('html', function (cb) {
-  let texto = '<p>201403624 - Fernando Hernandez</p><br><a download="esb.zip" href="esb.zip">Enlace para descargar el build recien construido</a>';
+  let texto = '<p>201403703 - Ruben Osorio</p><br><a download="esb.zip" href="esb.zip">Enlace para descargar el build recien construido</a>';
   fs.writeFile('dist/index.html', texto, cb);//html utilizado para deploy
 });
 
@@ -25,7 +25,7 @@ gulp.task('EmpaquetarTodo', function () {//FUNCION UTILIZADA PARA EMPAQUETAR TOD
     .pipe(gulp.dest('dist'));//ubicacion del zip
 });
 gulp.task('htmlall', function (cb) {
-  let texto = '<p>201403624 - Fernando Hernandez</p><br><a download="Servicios.zip" href="Servicios.zip">Enlace para descargar el build recien construido</a>';
+  let texto = '<p>201403703 - Ruben Osorio</p><br><a download="Servicios.zip" href="Servicios.zip">Enlace para descargar el build recien construido</a>';
   fs.writeFile('dist/index.html', texto, cb);//html utilizado para deploy de todos los servicios
 });
 
